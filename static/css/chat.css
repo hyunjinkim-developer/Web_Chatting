@@ -1,0 +1,112 @@
+:root {
+  --margin: 5px;
+  --title-height: 70px;
+  --message-box-margin: 5px;
+  --send-box-height: 55px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+.display-none {
+  display: none;
+}
+
+/* title */
+.title {
+  height: var(--title-height);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* eneter-chat-box */
+.enter-chat-box {
+  height: 40px;
+}
+
+.enter-chat-box * {
+  margin: var(--margin);
+}
+
+/* chat-box */
+.chat-list {
+  background-color: rgba(21, 34, 56);
+  height: calc(100vh - var(--title-height) - var(--send-box-height));
+  padding: 5px 15px;
+  overflow-y: auto;
+}
+
+.profile-img {
+  border-radius: 50%;
+  height: 50px;
+  margin: 3px var(--message-box-margin);
+  width: 50px;
+}
+
+.profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-chat {
+  flex-direction: row-reverse;
+  margin-bottom: var(--message-box-margin);
+}
+
+.other-chat {
+  flex-direction: row;
+  margin-bottom: var(--message-box-margin);
+}
+
+.secret-chat {
+  border: 7px dotted yellow;
+}
+
+.message {
+  border-radius: 5px;
+  display: inline-block;
+  margin: var(--message-box-margin);
+  padding: 10px;
+}
+
+.notice-enter {
+  color: cornflowerblue;
+  text-align: center;
+}
+
+.notice-leave {
+  color: red;
+  text-align: center;
+}
+
+/* send-box */
+.send-box {
+  height: var(--send-box-height);
+}
+
+.send-box * {
+  margin: var(--margin);
+  /* Vertical center */
+  display: flex;
+  align-items: center;
+}
+
+.enter-message {
+  width: 50vw;
+}

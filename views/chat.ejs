@@ -1,0 +1,46 @@
+  <%- include("./includes/header", { title: "Chat" }) %>
+  
+  <link rel="stylesheet" href="../static/css/chat.css" />
+</head>
+<body>
+  <div class="title horizontal-center vertical-center"><h1>🗣️ Let's Chat! 🗣️</h1></div>
+  
+  <!-- Enter chat box -->
+  <div class="enter-chat-box horizontal-center vertical-center" >
+    <input type="text" class="enter-nickname" placeholder="Nickname" autofocus />
+    <button type="button" onclick="enterChat()">Enter Chat</button>
+  </div>
+
+  <!-- Chat box -->
+  <div class="chat-box display-none">
+    <!-- Chat list -->
+    <div class="chat-list">
+      <!-- Chat list sample -->
+      <!-- <div class="my-chat vertical-center">
+          <div class="profile">
+            <img src="/static/src/img/MainProfile.jpg" alt="MainProfile" class="profile-img"/>
+            <div class="nickname">user 1</div>
+          </div>
+          <div class="message">msg1</div>
+      </div>
+      <div class="other-chat vertical-center">
+        <div class="profile">
+          <img src="/static/src/img/MainProfile.jpg" alt="MainProfile" class="profile-img"/>
+          <div class="nickname">user2</div>
+        </div>
+        <div class="message">msg2</div>
+      </div> -->
+    </div>
+    
+    <!-- Send box -->
+    <div class="send-box horizontal-center ">
+      <div>To</div>
+      <select class="nickname-list"></select>
+      <input type="text" class="enter-message" />
+      <button type="button" onclick="msgtoServer();">Send</button>
+    </div>
+  </div>
+  
+  <script src="/static/js/chat.js"></script>
+  
+  <%- include("./includes/footer") %>
