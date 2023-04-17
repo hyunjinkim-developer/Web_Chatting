@@ -7,6 +7,32 @@ let myNickname;
 let myColor;
 let tempImagePath = "/static/src/img/MainProfile.jpg";
 
+/* When enter pressed, send nickname or message from client to the server */
+// // Using addEventListener()
+// const enterMessageTag = document.querySelector(".enter-message");
+// enterMessageTag.addEventListener("keypress", (event) => {
+//   if (event.key === "Enter") {
+//     msgtoServer();
+//   }
+// });
+
+// Add function in onclick in .ejs
+/* When a user type in enter, send nickname from client to the server */
+function enterNicknameTypeEnter() {
+  /* Specify key stroke: 
+  event.code <- recommended
+  event.keyCode <- deprecated */
+  if (window.event.code == "Enter") {
+    enterChat();
+  }
+}
+/* When a user type in enter,send message the server */
+function enterMsgTypeEnter() {
+  if (window.event.keyCode == 13) {
+    msgtoServer();
+  }
+}
+
 function enterChat() {
   socket.emit("setUserData", document.querySelector(".enter-nickname").value);
 }

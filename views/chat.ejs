@@ -5,10 +5,10 @@
 <body>
   <div class="title horizontal-center vertical-center"><h1>🗣️ Let's Chat! 🗣️</h1></div>
   
-  <!-- Enter chat box -->
+  <!-- Enter chat box after setting nickname -->
   <div class="enter-chat-box horizontal-center vertical-center" >
-      <input type="text" class="enter-nickname" placeholder="Nickname" autofocus/>
-      <button type="button" onclick="enterChat()">Enter Chat</button>
+    <input type="text" class="enter-nickname" placeholder="Nickname" onkeypress="enterNicknameTypeEnter();" autofocus/>
+    <button type="button" onclick="enterChat()">Enter Chat</button>
   </div>
 
   <!-- Chat box -->
@@ -36,8 +36,8 @@
     <div class="send-box horizontal-center ">
       <div>To</div>
       <select class="nickname-list"></select>
-      <input type="text" class="enter-message" />
-      <button type="button" onclick="msgtoServer();">Send</button>
+      <input type="text" class="enter-message" onkeypress="enterMsgTypeEnter();"/>
+      <button type="button" class="send-message-btn" onclick="msgtoServer();">Send</button>
     </div>
   </div>
   
