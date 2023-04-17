@@ -87,7 +87,11 @@ socket.on("noticeEnter", (msg) => {
     .insertAdjacentHTML("beforeend", `<div class="notice-enter">${msg}</div>`);
 });
 
-socket.on("noticeLeave", (msg) => {});
+socket.on("noticeLeave", (msg) => {
+  document
+    .querySelector(".chat-list")
+    .insertAdjacentHTML("beforeend", `<div class="notice-leave">${msg}</div>`);
+});
 
 /* When the user successfully enters the chat */
 socket.on("enterySuccess", (userData) => {
@@ -171,6 +175,9 @@ socket.on("msgtoClient", (msgData) => {
   msgBox.appendChild(msg);
   profile.appendChild(profileImage);
   profile.appendChild(nickname);
+
+  // Set scroll at the bottom so that new message shows without scrolling
+  chatList.scrollTop = chatList.scrollHeight;
 });
 
 /* Error Handling */
